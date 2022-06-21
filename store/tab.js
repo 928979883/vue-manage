@@ -3,9 +3,9 @@ export default {
         isCollapse:false,
         tabsList:[
             {
-                path:'/',
-                name:'name',
-                label:'首页',
+                path:'/home',
+                name:'home',
+                laber:'首页',
                 icon:'home'
             }
         ],
@@ -18,8 +18,8 @@ export default {
         selectMenu(state,val){
             if(val.name !== 'home'){
                 state.currentMenu = val
-                const result = state.tabsList.findIndex(item >= item.name === val.name)
-                if(result !== -1){
+                const result = state.tabsList.findIndex(item => item.name === val.name)
+                if(result === -1){
                     state.tabsList.push(val)
                 }
             }else{
