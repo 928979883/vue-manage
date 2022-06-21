@@ -1,5 +1,5 @@
 {
-  "name": "background_management_system",
+  "name": "bg_system",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,9 +12,10 @@
     "core-js": "^3.8.3",
     "echarts": "^5.1.2",
     "element-ui": "^2.15.8",
+    "js-cookie": "^3.0.1",
     "mockjs": "^1.1.0",
     "vue": "^2.6.14",
-    "vue-router": "^3.2.0",
+    "vue-router": "^3.5.3",
     "vuex": "^3.6.2"
   },
   "devDependencies": {

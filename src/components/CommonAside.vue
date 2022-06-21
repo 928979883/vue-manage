@@ -36,10 +36,9 @@
     export default {
       data() {
         return {
-          // 是否展开
-          // isCollapse: false,
           menu:[
-            {
+            
+          {
               path:'/',
               name:'home',
               laber:'首页',
@@ -79,6 +78,7 @@
                 }
             ]
             },
+          
           ]
         };
       },
@@ -92,7 +92,7 @@
         clickMenu(item){
           this.$router.push({
             name: item.name
-          })
+          }).catch(data => {  })
           this.$store.commit('selectMenu', item)
         }
       },
@@ -105,6 +105,9 @@
         },
         isCollapse(){
           return this.$store.state.tab.isCollapse
+        },
+        asyncMenu(){
+          return this.$store.state.tab.menu
         }
       }
     }

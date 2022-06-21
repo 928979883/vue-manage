@@ -8,7 +8,6 @@ const routes=[
     {
         path:'/',
         name:'Main',
-        //按需引入
         component:() =>import('../views/Main.vue'),
         children:[
             {
@@ -19,7 +18,7 @@ const routes=[
             {
                 path:'/user',
                 name:'user',
-                component:() => import('../views/User')
+                component:() => import('../views/user')
             },
             {
                 path:'/mall',
@@ -38,6 +37,11 @@ const routes=[
             },
         ]
     },
+    {
+        path:'/login',
+        name:'login',
+        component:() =>import('../views/login/login.vue'),
+    }
 ]
 const router = new VueRouter({
     mode:'history',
