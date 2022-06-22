@@ -47,9 +47,7 @@ export default {
     name:'login',
     data() {
         return {
-            form:{
-
-            },
+            form:{},
             rules:{
                 username:[
                     { require:true,message:'请输入用户名', trigger:'blur' },
@@ -63,7 +61,9 @@ export default {
     },
     methods: {
         login(){
-            getMenu(this.form).then(res =>{
+            console.log('进来了',this.form);
+            getMenu(this.form).then(({data:res}) => {
+                console.log(res,'res');
                 if(res.code === 20000){
                     this.$store.commit('clearMenu')
                     this.$store.commit('setMenu',res.data.menu)
@@ -75,9 +75,9 @@ export default {
                     this.$message.warning(res.data.message)
                 }
             })
-            const token = Mock.Random.guid()
-            this.$store.commit('setToken',token)
-            this.$router.push({ name:'home'})
+            // const token = Mock.Random.guid()
+            // this.$store.commit('setToken',token)
+            // this.$router.push({ name:'home'})
         },
     },   
 }

@@ -7,7 +7,7 @@ export const getData = () => {
     })
 }
 
-export const getUser = (params) =>{
+export const getUser = (params) => {
     return axios.request({
         url:'/user/getUser',
         methods:'get',
@@ -15,10 +15,10 @@ export const getUser = (params) =>{
     })
 }
 
-export const getMenu = (param) =>{
+export const getMenu = (params) => {
     return axios.request({
         url:'/permission/getMenu',
         methods:'post',
-        data:param
+        data:params
     })
 }

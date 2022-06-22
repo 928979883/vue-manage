@@ -1,4 +1,4 @@
-import Cookies from "js-cookie"
+import Cookie from "js-cookie"
 
 export default {
     state :{
@@ -33,19 +33,20 @@ export default {
             const result = state.tabsList.findIndex(item => item.name ===val.name)
             state.tabsList.splice(result,1)
         },
+
         setMenu(state,val){
             state.menu = val
-            Cookies.set('menu',JSON.stringify(val))
+            Cookie.set('menu',JSON.stringify(val))
         },
         clearMenu(state){
             state.menu = []
-            Cookies.remove('menu')
+            Cookie.remove('menu')
         },
         addMenu(state,router){
-            if(!Cookies.get("menu")){
+            if(!Cookie.get("menu")){
                 return
             }
-            const menu = JSON.parse(Cookies.get('menu'))
+            const menu = JSON.parse(Cookie.get('menu'))
             state.menu = menu
             const menuArray = []
             menu.forEach(item => {

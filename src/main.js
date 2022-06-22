@@ -47,7 +47,7 @@ import "../api/mock";
 Vue.config.productionTip = false;
 //全局引入
 //Vue.use(ElementUI)
-//按需引入第二步
+//按需引入
 Vue.use(Button);
 Vue.use(Container);
 Vue.use(Main);
